@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: #fff5f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: #ff9bb8;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-date {
+            background: #ff6b9e;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .show-btn, .back-btn, .view-more-btn {
+            background: linear-gradient(to right, #ff6b9e, #ff4785);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            width: 80%;
+            max-width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 107, 158, 0.3);
+            text-decoration: none;
+        }
+        
+        .back-btn {
+            background: linear-gradient(to right, #6b8cff, #4785ff);
+        }
+        
+        .view-more-btn {
+            background: linear-gradient(to right, #9e6bff, #8547ff);
+            margin-top: 0;
+        }
+        
+        .show-btn:hover, .back-btn:hover, .view-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <h1 style="text-align:center; color:#d23c77;">Nuestra Historia</h1>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">Primer Mes</div>
+            <div class="timeline-content">
+                <p>Cuando nuestros ojos se encontraron por primera vez este fue un mes de adaptación y no me arrepiento de nada...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">Segundo Mes</div>
+            <div class="timeline-content">
+                <p>Cuando tus abrazos, tu sonrisa y esa mirada tan linda se volvieron mi lugar favorito...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">Tercer mes</div>
+            <div class="timeline-content">
+                <p>Cuando una simple mirada bastaba para entenderno y ya te decía te quiero.. ❤️</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Cuarto Mes</div>
+            <div class="timeline-content">
+                <p>Cuando nos volabamos horas de clases para estar juntos, momentos de felicidad...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">Quinto Mes</div>
+            <div class="timeline-content">
+                <p>Esa salida al zoologico y cuando me regalaste el peluche de zorro que me gustó mucho y solo de verlo me recuerda a ti..</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+           <div class="timeline-date" style="background:#d23c77; font-size:1.1em;">SEIS MESES</div>
+           <div class="timeline-content" style="border:2px solid #ff9bb8;">
+               <p>Medio año de risas, complicidad y amor creciente, te quiero mucho mi niño de ojos y sonrisa bonita....</p>
+               <ul style="list-style-type:none; padding-left:0;">
+                  <li>❤️ 183 días eligiéndote cada mañana</li>
+                  <li>✨ 4,392 horas de complicidad</li>
+                  <li>🌙 6 lunas llenas testigos de nuestro amor</li>
+                </ul>
+                <p style="font-style:italic; text-align:right;">¿Aceptas otros 6 meses de esta locura?</p>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a href="index.html" class="back-btn">Volver al Sobre</a>
+        </div>
+    </div>
+</body>
+</html>

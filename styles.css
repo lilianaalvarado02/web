@@ -1,0 +1,168 @@
+/* Estilo basado en la referencia */
+body {
+    background: #f88fb2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffdfea 100%);
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 6Q8 3 5 5t1 6l4 4 4-4q3-3 1-6t-5 1Z" fill="rgba(255,105,180,0.1)"/></svg>');
+    animation: floating-hearts 30s linear infinite;
+    z-index: -1;
+}
+
+@keyframes floating-hearts {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-50vh) translateX(20px); }
+    100% { transform: translateY(-100vh) translateX(0); }
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.envelope {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+/* Parte frontal del sobre (rosa intenso) */
+.envelope-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff95c6;
+    border-radius: 8px 8px 5px 5px;
+    box-shadow: 0 5px 20px rgba(255,105,180,0.3);
+    transform-origin: bottom;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 3;
+}
+
+/* Corazón-candado */
+.heart-lock {
+    position: absolute;
+    top: 92px;
+    right: 135px;
+    font-size: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    transition: all 0.3s;
+}
+
+.envelope:hover .heart-lock {
+    transform: scale(1.1);
+}
+
+/* Parte trasera (rosa más claro) */
+.envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffa9d1;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Solapa triangular */
+.envelope-flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fa78b9;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 4;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Carta que emerge */
+.letter {
+    position: absolute;
+    width: 94%;
+    height: 0;
+    background: white;
+    bottom: 8px;
+    left: 3%;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+.letter-content {
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.5s 0.4s;
+}
+
+.message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #a00b56;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estados animados */
+.envelope.open .envelope-front {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(-180deg);
+    z-index: 1;
+}
+
+.envelope.open .letter {
+    height: 200px;
+    transform: translateY(-180px);
+    z-index: 2;
+}
+
+.envelope.open .letter-content {
+    opacity: 1;
+}
+
+/* Añade esto a tu styles.css */
+.anniversary-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #ff6b9e;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(255,107,158,0.3);
+    transition: all 0.3s;
+    border: 2px solid white;
+}
+
+.anniversary-btn:hover {
+    background: #ff4785;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255,107,158,0.4);
+}

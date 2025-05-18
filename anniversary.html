@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Meses de Amor</title>
+    <style>
+        body {
+            background: url('https://www.transparenttextures.com/patterns/notebook.png');
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+        
+        .love-letter {
+            background: rgba(255, 255, 255, 0.95);
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            border: 2px solid #ffb6c1;
+            border-radius: 12px;
+            top: -10px;
+            left: -10px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        h1 {
+            color: #d23c77;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+            color: #555;
+        }
+        
+        .hidden-message {
+            margin: 30px 0;
+            padding: 20px;
+            background: #ffe6f2;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.8s ease-out;
+            border-left: 4px solid #ff6b9e;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .show-btn, .back-btn, .view-more-btn {
+            background: linear-gradient(to right, #ff6b9e, #ff4785);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            width: 80%;
+            max-width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 107, 158, 0.3);
+            text-decoration: none;
+        }
+        
+        .back-btn {
+            background: linear-gradient(to right, #6b8cff, #4785ff);
+        }
+        
+        .view-more-btn {
+            background: linear-gradient(to right, #9e6bff, #8547ff);
+            margin-top: 0;
+        }
+        
+        .show-btn:hover, .back-btn:hover, .view-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        small {
+            display: block;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        .heart {
+            color: #ff6b9e;
+            font-size: 1.5rem;
+            vertical-align: middle;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="love-letter">
+        <h1>Para Mi Cielito Lindo</h1>
+        <p>En estos 6 meses contigo he descubierto muchas cosas e incluso he descubierto aspectos nuevos en mí que ni yo conocía... Tengo un mensaje especial para ti:</p>
+        
+        <button class="show-btn" onclick="document.querySelector('.hidden-message').style.display='block'; this.style.display='none'">
+            Revelar Mensaje Secreto <span class="heart">❤️</span>
+        </button>
+        
+        <div class="hidden-message">
+            <p>Eres mi persona favorita en este mundo. No cambiaría estos 6 meses por nada. ¿Aceptas ser mi cómplice por muchos meses más?</p>
+            <small>Con todo mi amor, tu media naranja <span class="heart">👀 ❤️</span></small>
+            
+            <div class="btn-container">
+                <a href="index.html" class="back-btn">Volver al Sobre</a>
+                <a href="linea.html" class="view-more-btn">Continúa y echa otro vistazo <i class="fas fa-arrow-right"></i> </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
